@@ -10,28 +10,26 @@
  * @param {TreeNode} root
  * @return {number}
 //  */
-// maxDepth = (root) => {
-//     return Math.log2(root.length+1);
-// };
+/* my answer without recursion
+var maxDepth = function(root) {
+    return Math.log2(root.length+1);
+};
+*/
 
 var maxDepth = function(root) {
-    if(root === null){
+    if (root === null){
         return 0;
     }
+    let leftNodes = maxDepth(root.left);
+    let rightNodes = maxDepth(root.right);
+
+    if(rightNodes>leftNodes){
+        return rightNodes + 1;
+    }
     else{
-        return Math.log2(root.length+1);
+        return leftNodes + 1;
     }
 };
-// var maxDepth = function(root) {
-//     if(root.length === 0){
-//         return 0;
-//     }
-//     else{
-//         console.log(Math.ceil(root.length));
-//         return Math.ceil(root.length);
-//     }
-// };
-
 
 console.log(maxDepth([3,9,20,null,null,15,73,9,20,null,null,15,7,0,6]));
 console.log(maxDepth([3,9,20,null,null,15,7]));
