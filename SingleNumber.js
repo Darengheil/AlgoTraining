@@ -3,14 +3,14 @@
  * @return {number}
  */
 var singleNumber = function(nums) { 
-    let seen = [];
-    let out = [];
-    let j =0;
-    for(let i = 0; i < nums.length; i++) {
-        let item = nums[i];
-        // !!!
+    let answ = [];
+    const numstosolve = [...nums].sort();
+    for(let i = 0; i < numstosolve.length; i++) {
+        if((numstosolve[i+1] !== numstosolve[i])&&(numstosolve[i-1] !== numstosolve[i])){
+            answ.push(numstosolve[i]);
+        }
     }
-    return out;
+    return answ;
 };
 
 /* hard to understand how it works
@@ -20,5 +20,5 @@ if(seen[item] !== 1){
 }
 */
 // console.log(singleNumber([2,2,1]));
-console.log(singleNumber([4,1,2,1,2]));
+// console.log(singleNumber([4,1,2,1,2]));
 // console.log(singleNumber([1]));
