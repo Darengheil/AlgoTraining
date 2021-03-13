@@ -3,15 +3,18 @@
  * @return {boolean}
  */
  var isHappy = function(n) {
+    let answ = false;
     let SetTest = new Set();
-    let arr = [];
-    while(true) {
-        if(n === 1){
-            return true;
+    while(true) {        
+        let arr = [];
+        let sum = n;
+        if(sum === 1){
+            answ = true;
+            break;
         }
-        while(n>0){
-            arr.unshift(n%10);
-            n = Math.floor(n / 10);
+        while(sum>0){
+            arr.unshift(sum%10);
+            sum = Math.floor(sum / 10);
         }
         if(SetTest.has(n)){
             break;
@@ -21,7 +24,7 @@
             return sum + Math.pow(num, 2);
         }, 0);
     }
-    return false;
+    return answ;
 };
 
 // TODO
