@@ -27,7 +27,6 @@
     return answ;
 };
 
-// TODO
 // wrong answer
 // var isHappy = function(n) {
 //     let newarr = Array.from(String(n), Number);
