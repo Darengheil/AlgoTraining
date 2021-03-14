@@ -1,4 +1,4 @@
-//  always read documentation to know exact methods whic exists in your language
+//  always read documentation to know exact methods which exists in your language
 function test(s){
     s.reverse();
     return s;
