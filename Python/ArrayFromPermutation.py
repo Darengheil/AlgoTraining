@@ -1,21 +1,14 @@
 from typing import List
 
-
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        l = 0
-        r = len(nums) - 1
-        while l < r:
-            sum = nums[l] + nums[r]
-            if sum == target:
-                print([l, r])
-                return[l, r]
-            r -= 1
-        l += 1
-        return[]
+    def buildArray(self, nums: List[int]) -> List[int]:
+        ans = []
+        for i in range(len(nums)):
+            ans.append(i)
+            ans[i] = nums[nums[i]]
+        return ans
 
 
 answer = Solution()
-answer.twoSum([2, 7, 11, 15], 9)
-answer.twoSum([3, 2, 4], 6)
-answer.twoSum([3, 3], 6)
+answer.buildArray([0, 2, 1, 5, 3, 4])
+answer.buildArray([5, 0, 1, 2, 3, 4])
